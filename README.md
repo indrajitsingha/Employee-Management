@@ -4,7 +4,7 @@ A simple React + Vite application to add and view employee details.
 
 ## Live Demo
 
-[https://github.com/indrajitsingha/Employee-Management]
+[https://employee-management-axdv.vercel.app/]
 
 ## Tech Used
 
