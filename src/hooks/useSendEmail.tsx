@@ -22,7 +22,7 @@ const useSendEmail = () => {
         emailData,
         Emailjs_Public_Key
       )
-      .then((val) => toastSuccess("Email sent Successfully "))
+      .then(() => toastSuccess("Email sent Successfully "))
       .catch((err) => console.log(err));
   };
   return { sendemail };
