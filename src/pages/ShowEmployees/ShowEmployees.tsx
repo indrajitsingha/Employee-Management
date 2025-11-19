@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState,  useEffect } from "react";
 import { AgGridReact } from "ag-grid-react";
 import {
   AllCommunityModule,
@@ -9,6 +9,7 @@ import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import type { FormValues } from "@/util/types";
+import type { ColDef } from "ag-grid-community";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -27,16 +28,13 @@ const ShowEmployees = () => {
     setEmployees(stored);
   }, []);
 
-  const columns = useMemo(
-    () => [
-      { headerName: "Name", field: "name" },
-      { headerName: "Email", field: "email" },
-      { headerName: "Phone", field: "phone" },
-      { headerName: "Role", field: "role" },
-      { headerName: "Joining Date", field: "joiningDate" },
-    ],
-    []
-  );
+const columns: ColDef<FormValues>[] = [
+  { headerName: "Name", field: "name" },
+  { headerName: "Email", field: "email" },
+  { headerName: "Phone", field: "phone" },
+  { headerName: "Role", field: "role" },
+  { headerName: "Joining Date", field: "joiningDate" },
+];
 
   return (
     <div className="flex justify-center mt-10">
